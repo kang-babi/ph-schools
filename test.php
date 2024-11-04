@@ -4,4 +4,7 @@ require 'vendor/autoload.php';
 
 use KangBabi\PhSchools\PhSchool;
 
-print_r(PhSchool::get());
+
+echo '<pre>';
+print_r(PhSchool::get(true));
+echo '</pre>';
