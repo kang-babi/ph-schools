@@ -1,0 +1,17 @@
+{
+    "name": "kang-babi/ph-schools",
+    "description": "PHP-based library for list of schools in the Philippines",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "KangBabi\\PhSchools\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Joshua Benosa",
+            "email": "joshuabuban.benosa@bicol-u.edu.ph"
+        }
+    ]
+}
