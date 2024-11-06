@@ -2,7 +2,9 @@
 
 namespace KangBabi\PhSchools;
 
-class PhSchool
+use Illuminate\Support\Collection;
+
+class PhSchool extends Collection
 {
   protected static $data;
 
@@ -18,12 +20,12 @@ class PhSchool
     return static::$data;
   }
 
-  public static function get($isFlat = false)
+  public static function data($isFlat = false)
   {
     if ($isFlat) {
-      return call_user_func_array('array_merge', static::fetch());
+      return collect(call_user_func_array('array_merge', static::fetch()));
     }
 
-    return static::fetch();
+    return collect(static::fetch());
   }
 }
