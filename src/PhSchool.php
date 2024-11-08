@@ -20,6 +20,26 @@ class PhSchool extends Collection
     return static::$data;
   }
 
+  protected static function fetchExtra()
+  {
+    # get all files in the extra_attributes directory
+    $files = glob(__DIR__ . '/extra_attributes/*.php');
+
+    return array_map(function ($file) {
+      return include $file;
+    }, $files);
+  }
+
+  public static function extraAttributes()
+  {
+    return collect(call_user_func_array('array_merge', static::fetchExtra()));
+  }
+
+  public static function fetchExtraBySchoolId($schoolId)
+  {
+    return static::extraAttributes()->where('school_id', $schoolId)->first();
+  }
+
   public static function data($isFlat = false)
   {
     if ($isFlat) {
