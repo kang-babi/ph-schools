@@ -7,6 +7,6 @@ use KangBabi\PhSchools\PhSchool;
 
 echo '<pre>';
 print_r(
-  PhSchool::extraAttributes()->where('school_id', '111864')
+  PhSchool::extraAttributes()->where('school_id', '301649')
 );
 echo '</pre>';
